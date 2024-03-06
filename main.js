@@ -24,3 +24,9 @@
 			delete options.create;
 			delete options.disabled;
 //yes
+for(let key of props){
+				if(typeof this.table[key] === "function" && key.charAt(0) !== "_"){
+					this[key] = this.table[key].bind(this.table);
+				}
+			}
+		},
